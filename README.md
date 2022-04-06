@@ -20,8 +20,7 @@ In many domains we are interested in finding artifacts that are similar to a que
 In the following we use the term person of interest (PoI) to indicate the person that we reverse search on images and videos. The PoI may be present together with others in the datasets but the system should be able to retrieve the images / videos that the PoI. See bonus points for partial occlusion.
 
 
-## BaseLine
-### Quick Start
+## Quick Start
 **Clone the project**
  ``` console
  git clone https://github.com/danrongLi/CSGY6613_project.git
@@ -68,6 +67,75 @@ import tarfile
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 ```
+## BaseLine
+
+### Features extraction
+In our baseline project we choose =='vgg19'== as our features extracting model.
+```python
+model_architecture = 'vgg19'
+model = model_picker(model_architecture)
+
+batch_size = 128
+datagen = tensorflow.keras.preprocessing.image.ImageDataGenerator(preprocessing_function=preprocess_input)
+
+generator = datagen.flow_from_directory(root_dir,target_size=(250,250),class_mode=None, shuffle=False)
+num_images = len(generator.filenames)
+num_epochs = int(math.ceil(num_images / batch_size))
+
+start_time = time.time()
+feature_list = []
+#feature_list = model.predict_generator(generator, num_epochs)
+feature_list = model.predict(generator, num_epochs)
+end_time = time.time()
+
+print("Num images   = ", len(generator.classes))
+print("Shape of feature_list = ", feature_list.shape)
+print("Time taken in sec = ", end_time - start_time)
+```
+Num images   =  13233
+Shape of feature_list =  (13233, 512)
+Time taken in sec =  1818.6331593990326
+
+**Save these features to a pickle file**
+```python
+pickle.dump(generator.classes, open(r'C:\Users\djain\Documents\2022_Spring\6613 AI\project\lfw\class_ids-lfw.pickle', 'wb'))
+pickle.dump(filenames,open(r'C:\Users\djain\Documents\2022_Spring\6613 AI\project\lfw\filenames-lfw.pickle', 'wb'))
+pickle.dump(feature_list,open(r'C:\Users\djain\Documents\2022_Spring\6613 AI\project\lfw\features-lfw-' + model_architecture + '.pickle', 'wb'))
+```
+### Similarity Search
+The goal of this project is that when the user inputs an image, we can find similar images in our dataset and return them to the user.
+
+**KNN**
+
+```python
+knn = KNeighborsClassifier(n_neighbors=20)
+knn.fit(X_train, y_train)
+y_pred = knn.predict(X_test)
+```
+**Randomly select an Image for testing**
+```python
+user_input_img = mpimg.imread(list_file[user_input_index])
+plt.imshow(user_input_img)
+```
+![image](pics/KNN_test_input.png)
+
+**Search Result**
+```python
+print("Here are some similar faces that you might be interested:")
+list_faces = get_file_list('drive/My Drive/nyu second semester/artificial intelligence/ai_project/Cody/LFW/deepfunneled'+'/lfw-deepfunneled/'+name_output)
+num_faces = len(list_faces)
+fig = plt.figure(figsize=(10, 7))
+rows = 2
+columns = 2
+for i in range(min(4,num_faces)):
+  fig.add_subplot(rows, columns, i+1)
+  output_img = mpimg.imread(list_faces[i])
+  plt.imshow(output_img)
+```
+![image](pics/KNN_test_output.png)
+**KNN model Accuracy**
+
+
 
 
 ### Citation
