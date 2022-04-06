@@ -35,7 +35,8 @@ jupyter notebook --NotebookApp.allow_origin='https://colab.research.google.com' 
 
 **Copy the URL and paste it in your google colab**
 ![image](pics/Screen%20Shot%202022-04-06%20at%207.10.39%20PM.png)
-
+![image](pics/quickstart2.png)
+![image](pics/quickstart3.png)
 
 If you want to simulate running locally, please remember to copy and paste the folder "Cody" to your local google colab; delete all pickle (4) and h5 (1) files
 
