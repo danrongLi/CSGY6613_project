@@ -133,7 +133,7 @@ for i in range(min(4,num_faces)):
   plt.imshow(output_img)
 ```
 ![image](pics/KNN_test_output.png)
-**KNN model Accuracy**
+
 
 
 
