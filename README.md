@@ -42,6 +42,32 @@ If you want to simulate running locally, please remember to copy and paste the f
 
 Also change all file paths inside jupyter ==(replace r'XX\XX' with your own google drive file path)==
 
+**Packages required** (Please make sure that your local enviroment has all these packages installed)
+```python
+import os
+import random
+import time
+import math
+import tensorflow
+import pickle
+import numpy as np
+from numpy.linalg import norm
+from tqdm import tqdm, tqdm_notebook
+from tensorflow.keras.preprocessing import image
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.applications.resnet50 import ResNet50, preprocess_input
+from tensorflow.keras.applications.vgg16 import VGG16
+from tensorflow.keras.applications.vgg19 import VGG19
+from tensorflow.keras.applications.mobilenet import MobileNet
+from tensorflow.keras.applications.inception_v3 import InceptionV3
+from tensorflow.keras.models import Model
+from tensorflow.keras.layers import Input, Flatten, Dense, Dropout, GlobalAveragePooling2D
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.model_selection import train_test_split
+import tarfile
+import matplotlib.image as mpimg
+import matplotlib.pyplot as plt
+```
 
 
 ### Citation
