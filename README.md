@@ -9,12 +9,13 @@
 * Xuanhua Zhang xz3426@nyu.edu
 
 ## Table of Contents
-
-1. [OverView](##OverView)
-2. [BaseLine](##BaseLine)
-3. [Improvement](#third-example)
-4. [Citation](###Citation)
-
+- [Table of Contents](#table-of-contents)
+- [OverView](#overview)
+- [Quick Start](#quick-start)
+- [BaseLine](#baseline)
+  - [Features extraction](#features-extraction)
+  - [Similarity Search](#similarity-search)
+- [Citation](#citation)
 ## OverView
 In many domains we are interested in finding artifacts that are similar to a query artifact. In this project you are going to implement a system that can find artifacts when the queries are visual. The type of queries you will test your system on are images of faces (30 points) and videos of people. You will also document your approach clearly showing advantages over the baseline.
 
@@ -140,6 +141,6 @@ for i in range(min(4,num_faces)):
 
 
 
-### Citation
+## Citation
 - Practical Deep Learning for Cloud, Mobile, and Edge 
 https://www.oreilly.com/library/view/practical-deep-learning/9781492034858/
