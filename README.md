@@ -8,8 +8,8 @@
 
 * Xuanhua Zhang xz3426@nyu.edu
 
-## Table of Contents
-- [Table of Contents](#table-of-contents)
+## Table of Content
+- [Table of Content](#table-of-content)
 - [OverView](#overview)
 - [Quick Start](#quick-start)
 - [BaseLine](#baseline)
