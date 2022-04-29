@@ -1,6 +1,9 @@
-#CS-GY6613 Project -- Team 20
+# CS-GY6613 Project -- Team 20
 
-##Team members:
+## Project Report
+- [Project Report](https://drive.google.com/file/d/1z8-1mwJT0_Po-XHlEGELC_IB7yOqBQ1O/view?usp=sharing)
+
+## Team members:
 
 * Danrong Li dl4111@nyu.edu - (AWS contact person)
 
@@ -9,13 +12,16 @@
 * Xuanhua Zhang xz3426@nyu.edu
 
 ## Table of Content
-- [Table of Content](#table-of-content)
-- [OverView](#overview)
-- [Quick Start](#quick-start)
-- [BaseLine](#baseline)
-  - [Features extraction](#features-extraction)
-  - [Similarity Search](#similarity-search)
-- [Citation](#citation)
+- [CS-GY6613 Project -- Team 20](#cs-gy6613-project----team-20)
+  - [Project Report](#project-report)
+  - [Team members:](#team-members)
+  - [Table of Content](#table-of-content)
+  - [OverView](#overview)
+  - [Quick Start](#quick-start)
+  - [BaseLine](#baseline)
+    - [Features extraction](#features-extraction)
+    - [Similarity Search](#similarity-search)
+  - [Citation](#citation)
 ## OverView
 In many domains we are interested in finding artifacts that are similar to a query artifact. In this project you are going to implement a system that can find artifacts when the queries are visual. The type of queries you will test your system on are images of faces (30 points) and videos of people. You will also document your approach clearly showing advantages over the baseline.
 
